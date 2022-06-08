@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5zZ-1R-Yzs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Workout recorder-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ManageViewController" customModule="WorkOut_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WUL-Fz-j71">
+                                <rect key="frame" x="0.0" y="210" width="414" height="652"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0aC-Rw-jWW">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="652"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" id="xcf-5T-wXN">
+                                                <rect key="frame" x="0.0" y="44.5" width="207" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xcf-5T-wXN" id="NK5-cK-ZDr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addCell" id="Pfm-B3-6u0">
+                                                <rect key="frame" x="0.0" y="88" width="207" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pfm-B3-6u0" id="Ubb-SP-gGw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.60688334700000002" green="0.11012608560000001" blue="0.1197500303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-KL-iin">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="652"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciseCell" id="bph-Ih-qC5">
+                                                <rect key="frame" x="0.0" y="44.5" width="207" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bph-Ih-qC5" id="rUk-Bx-4Wd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0aC-Rw-jWW" firstAttribute="top" secondItem="WUL-Fz-j71" secondAttribute="top" id="EJW-MF-ccW"/>
+                                    <constraint firstItem="gSg-KL-iin" firstAttribute="top" secondItem="WUL-Fz-j71" secondAttribute="top" id="Rpv-IU-VbQ"/>
+                                    <constraint firstItem="gSg-KL-iin" firstAttribute="leading" secondItem="0aC-Rw-jWW" secondAttribute="trailing" id="ZrF-Rr-190"/>
+                                    <constraint firstItem="gSg-KL-iin" firstAttribute="leading" secondItem="0aC-Rw-jWW" secondAttribute="trailing" id="hNP-tu-XLW"/>
+                                    <constraint firstItem="0aC-Rw-jWW" firstAttribute="leading" secondItem="WUL-Fz-j71" secondAttribute="leading" id="kvL-9k-d9U"/>
+                                    <constraint firstAttribute="bottom" secondItem="0aC-Rw-jWW" secondAttribute="bottom" id="w0a-7d-NdE"/>
+                                    <constraint firstAttribute="bottom" secondItem="gSg-KL-iin" secondAttribute="bottom" id="xLw-6C-WLG"/>
+                                    <constraint firstAttribute="trailing" secondItem="gSg-KL-iin" secondAttribute="trailing" id="za2-AW-TEV"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sut-mw-ayP">
+                                <rect key="frame" x="0.0" y="180" width="414" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Z-77-ZRv">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Add Workout"/>
+                                        <connections>
+                                            <action selector="AddWorkoutPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPE-5b-gfc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4I-BV-V7q">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Add Exercise"/>
+                                        <connections>
+                                            <action selector="AddExercisePress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z9h-vs-DGc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sut-mw-ayP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1kw-Cc-g4p"/>
+                            <constraint firstAttribute="trailing" secondItem="WUL-Fz-j71" secondAttribute="trailing" id="Bfm-Tv-gbn"/>
+                            <constraint firstItem="WUL-Fz-j71" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="210" id="g14-lE-HJt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sut-mw-ayP" secondAttribute="trailing" id="kXw-IC-Afb"/>
+                            <constraint firstItem="WUL-Fz-j71" firstAttribute="top" secondItem="sut-mw-ayP" secondAttribute="bottom" id="qSm-it-Hal"/>
+                            <constraint firstItem="WUL-Fz-j71" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wea-dV-GOr"/>
+                            <constraint firstItem="WUL-Fz-j71" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ze5-sQ-bQi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Workout recorder" id="V0t-3w-osg"/>
+                    <connections>
+                        <outlet property="exerciseButton" destination="B4I-BV-V7q" id="4jG-0F-Ojt"/>
+                        <outlet property="exerciseTableView" destination="gSg-KL-iin" id="QDS-sR-Hgb"/>
+                        <outlet property="workoutButton" destination="32Z-77-ZRv" id="thv-tl-W0h"/>
+                        <outlet property="workoutTableView" destination="0aC-Rw-jWW" id="2LV-oS-kcj"/>
+                        <segue destination="l3n-9T-YE9" kind="show" identifier="toAddEdit" id="Me4-GF-7Mo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897.10144927536237" y="53.571428571428569"/>
+        </scene>
+        <!--Add Modify View Controller-->
+        <scene sceneID="U6e-MW-ldH">
+            <objects>
+                <viewController id="l3n-9T-YE9" customClass="AddModifyViewController" customModule="WorkOut_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oip-Vb-rI0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="emx-vw-mY8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WR9-j1-iYJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="npV-SP-gz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2117" y="54"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lne-uy-pgS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5zZ-1R-Yzs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZB9-81-HVo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="49j-zu-IZs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EwO-jt-qmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13.043478260869566" y="53.571428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

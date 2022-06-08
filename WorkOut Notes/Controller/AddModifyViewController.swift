@@ -1,19 +1,21 @@
 //
-//  ViewController.swift
+//  AddModifyViewController.swift
 //  WorkOut Notes
 //
 //  Created by Vicente Enguidanos on 08/06/2022.
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
+class AddModifyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
+    
 
 
 }
-
