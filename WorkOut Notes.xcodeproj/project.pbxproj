@@ -15,6 +15,12 @@
 		4112C13C2850B39800907194 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4112C13A2850B39800907194 /* dataModel.xcdatamodeld */; };
 		4112C1442850B6E700907194 /* AddModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4112C1432850B6E700907194 /* AddModifyViewController.swift */; };
 		4112C1462850BAF000907194 /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4112C1452850BAF000907194 /* ManageViewController.swift */; };
+		4141ECEB28589976008DCEF9 /* setsCellPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141ECEA28589976008DCEF9 /* setsCellPrototype.swift */; };
+		4141ECEE2858AA2F008DCEF9 /* isStringAnInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141ECED2858AA2E008DCEF9 /* isStringAnInt.swift */; };
+		4141ECF02858BE66008DCEF9 /* dataModelManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141ECEF2858BE66008DCEF9 /* dataModelManage.swift */; };
+		41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599794285A5785003FCBD4 /* MainScreenViewController.swift */; };
+		41599797285A5AF0003FCBD4 /* SelectWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */; };
+		41599799285A5B21003FCBD4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599798285A5B21003FCBD4 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		4112C13B2850B39800907194 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		4112C1432850B6E700907194 /* AddModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModifyViewController.swift; sourceTree = "<group>"; };
 		4112C1452850BAF000907194 /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		4141ECEA28589976008DCEF9 /* setsCellPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setsCellPrototype.swift; sourceTree = "<group>"; };
+		4141ECED2858AA2E008DCEF9 /* isStringAnInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isStringAnInt.swift; sourceTree = "<group>"; };
+		4141ECEF2858BE66008DCEF9 /* dataModelManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModelManage.swift; sourceTree = "<group>"; };
+		41599794285A5785003FCBD4 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkoutViewController.swift; sourceTree = "<group>"; };
+		41599798285A5B21003FCBD4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				4112C13A2850B39800907194 /* dataModel.xcdatamodeld */,
+				4141ECEA28589976008DCEF9 /* setsCellPrototype.swift */,
+				4141ECED2858AA2E008DCEF9 /* isStringAnInt.swift */,
+				4141ECEF2858BE66008DCEF9 /* dataModelManage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +108,9 @@
 			children = (
 				4112C1432850B6E700907194 /* AddModifyViewController.swift */,
 				4112C1452850BAF000907194 /* ManageViewController.swift */,
+				41599794285A5785003FCBD4 /* MainScreenViewController.swift */,
+				41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */,
+				41599798285A5B21003FCBD4 /* RecordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,9 +188,15 @@
 			files = (
 				4112C1442850B6E700907194 /* AddModifyViewController.swift in Sources */,
 				4112C13C2850B39800907194 /* dataModel.xcdatamodeld in Sources */,
+				41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */,
+				4141ECEE2858AA2F008DCEF9 /* isStringAnInt.swift in Sources */,
 				4112C1222850B19500907194 /* AppDelegate.swift in Sources */,
+				41599799285A5B21003FCBD4 /* RecordViewController.swift in Sources */,
+				4141ECF02858BE66008DCEF9 /* dataModelManage.swift in Sources */,
+				41599797285A5AF0003FCBD4 /* SelectWorkoutViewController.swift in Sources */,
 				4112C1462850BAF000907194 /* ManageViewController.swift in Sources */,
 				4112C1242850B19500907194 /* SceneDelegate.swift in Sources */,
+				4141ECEB28589976008DCEF9 /* setsCellPrototype.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
