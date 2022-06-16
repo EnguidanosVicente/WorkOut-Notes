@@ -9,28 +9,30 @@ import UIKit
 import CoreData
 
 class AddModifyViewController: UIViewController, UITableViewDelegate {
-
-  //  var currentRow: Int = 0
+    
+    //  var currentRow: Int = 0
     var numberOfSets: Int = 0
     var exerciseName: String = ""
     var exercise = [Exercises]()
-    
+    var emptyArray = false
     
     //se crea "el view de la base de datos"
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
     @IBOutlet weak var setsTableView: UITableView!
     @IBOutlet weak var exerciseTextField: UITextField!
     @IBOutlet weak var setsTextField: UITextField!
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        emptyArray = false
+        
         setsTableView.dataSource = self
         setsTableView.delegate = self
-       // numberOfSets = Int(exerciseHeader.sets)
+        // numberOfSets = Int(exerciseHeader.sets)
         
         exerciseTextField.text = exerciseName
         
@@ -40,45 +42,28 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let now = Date()
-        
         for i in 0..<numberOfSets{
-            
-            if i < exercise.count{
-            
-                exercise[i].exerciseName = exerciseName
-                exercise[i].sets = Int16(numberOfSets)
-                exercise[i].numberOfSet = Int16((setsTableView.cellForRow(at: IndexPath(row: i, section: 0)) as! setsCellPrototype).setOnTableTextField.text!)!
-                exercise[i].reps = Int16((setsTableView.cellForRow(at: IndexPath(row: i, section: 0)) as! setsCellPrototype).repsOnTableTextField.text ?? "0") ?? 0
-                exercise[i].weight = Float((setsTableView.cellForRow(at: IndexPath(row: i, section: 0)) as! setsCellPrototype).weightOnTableTextField.text ?? "0") ?? 0
-              //  exercise[i].date = exercise[i].date
-              //  exercise[i].comment = ""
-                
+            exercise[i].exerciseName = exerciseName
+            exercise[i].sets = Int16(numberOfSets)
+            if emptyArray{
+                exercise[i].date = "0000-00-00"
             }else{
-                
-                let addExercise = Exercises(context: self.context)
-                
-                addExercise.exerciseName = exerciseName
-                addExercise.sets = Int16(numberOfSets)
-                addExercise.numberOfSet = Int16((setsTableView.cellForRow(at: IndexPath(row: i, section: 0)) as! setsCellPrototype).setOnTableTextField.text!)!
-                addExercise.reps = Int16((setsTableView.cellForRow(at: IndexPath(row: i, section: 0)) as! setsCellPrototype).repsOnTableTextField.text ?? "0") ?? 0
-                addExercise.weight = Float((setsTableView.cellForRow(at: IndexPath(row: i, section: 0)) as! setsCellPrototype).weightOnTableTextField.text ?? "0") ?? 0
-                addExercise.date = dateFormatter.string(from: now)
-                addExercise.comment = ""
-                
-                exercise.append(addExercise)
+                exercise[i].date = exercise[0].date
             }
+          //  exercise[i].date = "2022-06-15"
+            exercise[i].comment = ""
+            exercise[i].numberOfSet = Int16(i + 1)
+            
         }
-
+        
         saveData()
         print (exercise)
         
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func setsFieldChanged(_ sender: UITextField) {
-    
+        
         if isStringAnInt(string: sender.text!){
             numberOfSets = Int(sender.text!)!
             
@@ -87,32 +72,35 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
     }
 }
 
-// MARK: extension
+// MARK: extension 1
 
 extension AddModifyViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //change the lenght of array
+        exercise = changeArrayExerLenght(of: exercise, to: numberOfSets)
         
         return Int(numberOfSets)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         let cell = setsTableView.dequeueReusableCell(withIdentifier: "setsCell", for: indexPath) as! setsCellPrototype
         
-        if  indexPath.row < exercise.count{
-            cell.setOnTableTextField.text = String(exercise[indexPath.row].numberOfSet)
-            cell.repsOnTableTextField.text = String(exercise[indexPath.row].reps)
-            cell.weightOnTableTextField.text = String(exercise[indexPath.row].weight)
-        }else{
-            cell.setOnTableTextField.text = String(indexPath.row + 1)
-            cell.repsOnTableTextField.text = ""
-            cell.weightOnTableTextField.text = ""
-        }
+
+        cell.repsOnTableTextField.text = String(exercise[indexPath.row].reps)
+        cell.weightOnTableTextField.text = String(exercise[indexPath.row].weight)
+        cell.setOnTableTextField.text = String(indexPath.row + 1)
+        
+        cell.repsOnTableTextField.tag = indexPath.row
+        cell.repsOnTableTextField.delegate = self
+        
+        cell.weightOnTableTextField.tag = indexPath.row
+        cell.weightOnTableTextField.delegate = self
         
         return cell
     }
-
+    
     
     func loadWorkOut(){
         
@@ -149,8 +137,10 @@ extension AddModifyViewController: UITableViewDataSource{
         
         numberOfSets = exercise.count
         
-        if exercise.count != 0 {
-            setsTextField.text = String(exercise.count)
+        if numberOfSets != 0 {
+            setsTextField.text = String(numberOfSets)
+        }else{
+            emptyArray = true
         }
         
         self.setsTableView.reloadData()
@@ -165,5 +155,33 @@ extension AddModifyViewController: UITableViewDataSource{
             
         }
     }
+    
+}
+
+
+// MARK: extension 2
+
+extension AddModifyViewController: UITextFieldDelegate{
+    
+    //delegate method texfield, trigger when finish typing
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        let row = textField.tag
+        
+        //check which textfield is selected
+        if ((setsTableView.cellForRow(at: IndexPath(row: row, section: 0)) as! setsCellPrototype).repsOnTableTextField.self == textField.self){
+            if isStringAnInt(string: textField.text ?? " "){
+                exercise[row].reps = Int16(textField.text!)!
+            }
+        }else{
+            if isStringAnInt(string: textField.text ?? " "){
+                exercise[row].weight = Float(textField.text!)!
+            }
+        }
+        print (row)
+        print (exercise)
+    }
+    
     
 }

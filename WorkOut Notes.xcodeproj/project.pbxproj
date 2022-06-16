@@ -18,6 +18,7 @@
 		4141ECEB28589976008DCEF9 /* setsCellPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141ECEA28589976008DCEF9 /* setsCellPrototype.swift */; };
 		4141ECEE2858AA2F008DCEF9 /* isStringAnInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141ECED2858AA2E008DCEF9 /* isStringAnInt.swift */; };
 		4141ECF02858BE66008DCEF9 /* dataModelManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141ECEF2858BE66008DCEF9 /* dataModelManage.swift */; };
+		414D2927285B470A003E19BD /* changeArrayExerLenght.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D2926285B470A003E19BD /* changeArrayExerLenght.swift */; };
 		41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599794285A5785003FCBD4 /* MainScreenViewController.swift */; };
 		41599797285A5AF0003FCBD4 /* SelectWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */; };
 		41599799285A5B21003FCBD4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599798285A5B21003FCBD4 /* RecordViewController.swift */; };
@@ -37,6 +38,7 @@
 		4141ECEA28589976008DCEF9 /* setsCellPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setsCellPrototype.swift; sourceTree = "<group>"; };
 		4141ECED2858AA2E008DCEF9 /* isStringAnInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isStringAnInt.swift; sourceTree = "<group>"; };
 		4141ECEF2858BE66008DCEF9 /* dataModelManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModelManage.swift; sourceTree = "<group>"; };
+		414D2926285B470A003E19BD /* changeArrayExerLenght.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeArrayExerLenght.swift; sourceTree = "<group>"; };
 		41599794285A5785003FCBD4 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkoutViewController.swift; sourceTree = "<group>"; };
 		41599798285A5B21003FCBD4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				4141ECEA28589976008DCEF9 /* setsCellPrototype.swift */,
 				4141ECED2858AA2E008DCEF9 /* isStringAnInt.swift */,
 				4141ECEF2858BE66008DCEF9 /* dataModelManage.swift */,
+				414D2926285B470A003E19BD /* changeArrayExerLenght.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */,
 				4141ECEE2858AA2F008DCEF9 /* isStringAnInt.swift in Sources */,
 				4112C1222850B19500907194 /* AppDelegate.swift in Sources */,
+				414D2927285B470A003E19BD /* changeArrayExerLenght.swift in Sources */,
 				41599799285A5B21003FCBD4 /* RecordViewController.swift in Sources */,
 				4141ECF02858BE66008DCEF9 /* dataModelManage.swift in Sources */,
 				41599797285A5AF0003FCBD4 /* SelectWorkoutViewController.swift in Sources */,
