@@ -13,6 +13,7 @@ class SelectWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var workoutTableView: UITableView!
     
     var workout = [WorkOut]()
+    var segueName:String = ""
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -37,6 +38,20 @@ class SelectWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
         cell.textLabel?.text = workout[indexPath.row].workOutName
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        segueName = workout[indexPath.row].workOutName ?? ""
+        performSegue(withIdentifier: "toExercise", sender: self)
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! SelectExerciseViewController
+        
+        if segue.identifier == "toExercise"{
+            destinationVC.workoutName = segueName
+        }
     }
     
     func loadWorkout(){

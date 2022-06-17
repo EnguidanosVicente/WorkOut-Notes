@@ -36,7 +36,7 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
         
         exerciseTextField.text = exerciseName
         
-        loadWorkOut()
+        loadExercise()
         
     }
     
@@ -102,7 +102,7 @@ extension AddModifyViewController: UITableViewDataSource{
     }
     
     
-    func loadWorkOut(){
+    func loadExercise(){
         
         //Find all the exercises thanks to header
         let predicateName = NSPredicate(format: "exerciseName == %@", exerciseName)
