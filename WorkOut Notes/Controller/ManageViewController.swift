@@ -103,7 +103,6 @@ class ManageViewController: UIViewController, UITableViewDelegate {
                 newExercise.exerciseName = newText.text!
                 newExercise.sets = 0
                 newExercise.numberOfSet = 0
-                // newExercise.ecercisesToWorkout = self.workout[self.numRow].workoutToExercises
                 newExercise.addToEcercisesToWorkout(self.workout[self.numRow])
                 
                 self.exercise.append(newExercise)
@@ -215,6 +214,34 @@ extension ManageViewController: UITableViewDataSource{
         
         if segue.identifier == "toAddEdit"{
             destinationVC.exerciseName = segueName
+        }
+    }
+    
+    // Override to support conditional editing of the table view.
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    
+    
+    // Override to support editing the table view.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if tableView == self.workoutTableView {
+            if editingStyle == .delete {
+                context.delete(workout[indexPath.row])
+                workout.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                saveData()
+            }
+        }
+        
+        if tableView == self.exerciseTableView {
+            if editingStyle == .delete {
+                exercise[indexPath.row].removeFromEcercisesToWorkout(self.workout[self.numRow])
+                exercise.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
     

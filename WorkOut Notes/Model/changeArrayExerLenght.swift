@@ -23,7 +23,6 @@ func changeArrayExerLenght(of array: [Exercises], to newLength: Int) -> [Exercis
             array2.append(exercise)
             
         }
-       // return array + Array(repeating: Exercises(context: context), count: newLength - array.count)
         return array2
     }
 }

@@ -11,8 +11,7 @@ class MainScreenViewController: UIViewController {
 
     @IBOutlet weak var buildPlanButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var profileButton: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,5 +29,8 @@ class MainScreenViewController: UIViewController {
     
     }
 
+    @IBAction func calendarButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "showCalendar", sender: self)
+    }
     
 }

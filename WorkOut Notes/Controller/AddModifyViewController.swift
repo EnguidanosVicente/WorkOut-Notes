@@ -12,6 +12,7 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
     
     //  var currentRow: Int = 0
     var numberOfSets: Int = 0
+    var initialCount: Int = 0
     var exerciseName: String = ""
     var exercise = [Exercises]()
     var emptyArray = false
@@ -50,10 +51,15 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
             }else{
                 exercise[i].date = exercise[0].date
             }
-          //  exercise[i].date = "2022-06-15"
             exercise[i].comment = ""
             exercise[i].numberOfSet = Int16(i + 1)
             
+        }
+        
+        if initialCount > numberOfSets{
+            for i in numberOfSets..<initialCount{
+                context.delete(exercise[i])
+            }
         }
         
         saveData()
@@ -77,8 +83,11 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
 extension AddModifyViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if initialCount < numberOfSets{
         //change the lenght of array
         exercise = changeArrayExerLenght(of: exercise, to: numberOfSets)
+        }
         
         return Int(numberOfSets)
     }
@@ -136,6 +145,7 @@ extension AddModifyViewController: UITableViewDataSource{
         }
         
         numberOfSets = exercise.count
+        initialCount = exercise.count
         
         if numberOfSets != 0 {
             setsTextField.text = String(numberOfSets)
