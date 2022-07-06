@@ -79,7 +79,7 @@ class CalendarRecordViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func getSections() -> [SectionInfo]{
-        var sections: Int = 1
+
         var i = 1
 
         
@@ -93,15 +93,17 @@ class CalendarRecordViewController: UIViewController, UITableViewDelegate, UITab
             if exercises[i - 1].exerciseName != exercises[i].exerciseName{
                 sectionInfo.append(SectionInfo(sectionName: exercises[i - 1].exerciseName ?? "", datasection: datasection))
                 datasection.removeAll()
-                sections += 1
+
             }
             datasection.append(DataSection(set: exercises[i].numberOfSet, reps: exercises[i].reps, weight: exercises[i].weight))
             i += 1
             
         }while exercises.count > 0 && i < exercises.count
         
-        print (sections)
-        print (sectionInfo)
+        sectionInfo.append(SectionInfo(sectionName: exercises[i - 1].exerciseName ?? "", datasection: datasection))
+        datasection.removeAll()
+
+        
         return sectionInfo
     }
 }

@@ -475,7 +475,7 @@
                                                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDD-oH-oiq">
-                                                            <rect key="frame" x="327" y="7" width="47" height="31"/>
+                                                            <rect key="frame" x="312" y="7" width="47" height="31"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="note.text.badge.plus" catalog="system"/>
@@ -483,7 +483,6 @@
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFu-MW-DUg">
                                                             <rect key="frame" x="146" y="7" width="47" height="31"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="note.text" catalog="system"/>
                                                         </button>
                                                     </subviews>
@@ -598,15 +597,21 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="eMb-Lh-TCT" firstAttribute="top" secondItem="PEt-cX-pH2" secondAttribute="top" id="5bK-5J-dzY"/>
+                                    <constraint firstAttribute="trailing" secondItem="eMb-Lh-TCT" secondAttribute="trailing" id="O5W-kp-YJz"/>
+                                    <constraint firstItem="eMb-Lh-TCT" firstAttribute="leading" secondItem="PEt-cX-pH2" secondAttribute="leading" id="eRa-HJ-U0p"/>
+                                    <constraint firstAttribute="bottom" secondItem="eMb-Lh-TCT" secondAttribute="bottom" id="jqN-E9-Pa3"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOF-lS-ofi">
-                                <rect key="frame" x="20" y="88" width="374" height="124"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="124"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RSW-fI-nyG">
-                                        <rect key="frame" x="0.0" y="0.0" width="189" height="124"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="190.5" height="124"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0RG-Vj-DBs">
-                                                <rect key="frame" x="0.0" y="0.0" width="189" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="190.5" height="34.5"/>
                                                 <segments>
                                                     <segment title="Stop Count"/>
                                                     <segment title="Count Down"/>
@@ -616,10 +621,10 @@
                                                 </connections>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="asG-az-6D0">
-                                                <rect key="frame" x="0.0" y="45.5" width="189" height="33"/>
+                                                <rect key="frame" x="0.0" y="45.5" width="190.5" height="33"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wv-cd-z3y">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="33"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" image="minus.square.fill" catalog="system"/>
                                                         <connections>
@@ -627,13 +632,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4O-0a-yHY">
-                                                        <rect key="frame" x="71.5" y="0.0" width="46" height="33"/>
+                                                        <rect key="frame" x="72" y="0.0" width="46.5" height="33"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BON-54-UNe">
-                                                        <rect key="frame" x="142.5" y="0.0" width="46.5" height="33"/>
+                                                        <rect key="frame" x="143.5" y="0.0" width="47" height="33"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" image="plus.app.fill" catalog="system"/>
                                                         <connections>
@@ -643,10 +648,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-VR-wiz">
-                                                <rect key="frame" x="0.0" y="90.5" width="189" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="90.5" width="190.5" height="33.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ox-rr-pGX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="33.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="33.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" image="minus.square.fill" catalog="system"/>
                                                         <connections>
@@ -654,13 +659,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOv-JV-i4E">
-                                                        <rect key="frame" x="72" y="0.0" width="45" height="33.5"/>
+                                                        <rect key="frame" x="72.5" y="0.0" width="45.5" height="33.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1I-Iu-zTc">
-                                                        <rect key="frame" x="144" y="0.0" width="45" height="33.5"/>
+                                                        <rect key="frame" x="145" y="0.0" width="45.5" height="33.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" image="plus.app.fill" catalog="system"/>
                                                         <connections>
@@ -672,16 +677,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="hEs-PF-N9L">
-                                        <rect key="frame" x="189" y="0.0" width="185" height="124"/>
+                                        <rect key="frame" x="190.5" y="0.0" width="223.5" height="124"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-gs-RJ0">
-                                                <rect key="frame" x="39.5" y="0.0" width="106.5" height="41"/>
+                                                <rect key="frame" x="58.5" y="0.0" width="106.5" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="hEX-pF-F5a">
-                                                <rect key="frame" x="0.0" y="83" width="185" height="41"/>
+                                                <rect key="frame" x="19.5" y="83" width="185" height="41"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtr-Z8-m8n">
                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="41"/>
@@ -715,10 +720,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PEt-cX-pH2" firstAttribute="top" secondItem="EOF-lS-ofi" secondAttribute="bottom" id="8XY-Od-kLq"/>
-                            <constraint firstItem="uIH-sk-ffl" firstAttribute="trailing" secondItem="EOF-lS-ofi" secondAttribute="trailing" constant="20" id="A3Z-i4-WsL"/>
+                            <constraint firstItem="uIH-sk-ffl" firstAttribute="trailing" secondItem="EOF-lS-ofi" secondAttribute="trailing" id="A3Z-i4-WsL"/>
                             <constraint firstItem="EOF-lS-ofi" firstAttribute="top" secondItem="uIH-sk-ffl" secondAttribute="top" id="U0g-wq-IBw"/>
                             <constraint firstItem="uIH-sk-ffl" firstAttribute="trailing" secondItem="PEt-cX-pH2" secondAttribute="trailing" constant="20" id="dvm-92-bMs"/>
-                            <constraint firstItem="EOF-lS-ofi" firstAttribute="leading" secondItem="uIH-sk-ffl" secondAttribute="leading" constant="20" id="fBm-ef-c90"/>
+                            <constraint firstItem="EOF-lS-ofi" firstAttribute="leading" secondItem="uIH-sk-ffl" secondAttribute="leading" id="fBm-ef-c90"/>
                             <constraint firstItem="uIH-sk-ffl" firstAttribute="bottom" secondItem="PEt-cX-pH2" secondAttribute="bottom" id="ihQ-R4-P41"/>
                             <constraint firstItem="PEt-cX-pH2" firstAttribute="leading" secondItem="uIH-sk-ffl" secondAttribute="leading" constant="20" id="zuG-8W-pjS"/>
                         </constraints>

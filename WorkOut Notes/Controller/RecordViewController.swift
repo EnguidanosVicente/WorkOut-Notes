@@ -21,7 +21,6 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var recordTableView: UITableView!
-
     
     var exerciseName: String = ""
     let chrono = chronometer()
@@ -42,6 +41,24 @@ class RecordViewController: UIViewController {
             recordTableView.delegate = self
         }else{
             promptBack()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        var isempty: Bool = true
+        
+        if self.isMovingFromParent {
+            for i in 0..<currentExercise.count{
+                if currentExercise[i].reps != 0 || currentExercise[i].weight != 0{
+                    isempty = false
+                }
+            }
+            if isempty{
+                for i in 0..<currentExercise.count{
+                    context.delete(currentExercise[i])
+                }
+            }
         }
     }
     
@@ -150,6 +167,21 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
             cell.currentRepsTextField.text = String(currentExercise[indexPath.row - 2].reps)
             cell.currentWeightTextField.text = String(currentExercise[indexPath.row - 2].weight)
             
+            if let prevMessage = prevExercise[indexPath.row - 2].comment{
+                if prevMessage > ""{
+                    cell.previousCommentButton.isEnabled = true
+                    cell.previousCommentButton.tag = indexPath.row - 2
+                    cell.previousCommentButton.addTarget(self, action: #selector(prevButtonWasTapped(sender:)), for: .touchUpInside)
+                }else{
+                    cell.previousCommentButton.isEnabled = false
+                }
+            }else{
+                cell.previousCommentButton.isEnabled = false
+            }
+            
+            cell.currentCommentButton.tag = indexPath.row - 2
+            cell.currentCommentButton.addTarget(self, action: #selector(currentButtonWasTapped(sender:)), for: .touchUpInside)
+            
             cell.currentRepsTextField.tag = indexPath.row
             cell.currentRepsTextField.delegate = self
             
@@ -158,6 +190,39 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
             
             return cell
         }
+    }
+    
+    @objc func prevButtonWasTapped(sender: UIButton){
+
+        let alert = UIAlertController(title: prevExercise[sender.tag].comment, message: "", preferredStyle: .alert)
+        
+        let actionOk = UIAlertAction(title: "OK", style: .default)
+
+        alert.addAction(actionOk)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func currentButtonWasTapped(sender: UIButton){
+
+        var newText = UITextField()
+        
+        let alert = UIAlertController(title: "Add comment", message: "", preferredStyle: .alert)
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "example: Add more weight"
+            alertTextField.text = self.currentExercise[sender.tag].comment ?? ""
+            newText = alertTextField
+        }
+        
+        
+        let actionSave = UIAlertAction(title: "Save", style: .default) { action in
+            self.currentExercise[sender.tag].comment = newText.text
+            self.saveData()
+        }
+        let actionCancel = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        alert.addAction(actionSave)
+        alert.addAction(actionCancel)
+        present(alert, animated: true, completion: nil)
     }
     
     func checkExercises(){
@@ -241,9 +306,6 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
                 prevExercise[i].exerciseName = exerciseName
             }
         }
-        //initialize new one
-
-        
     }
     
     func saveData(){
