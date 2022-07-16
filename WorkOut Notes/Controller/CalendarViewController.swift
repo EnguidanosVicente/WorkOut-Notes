@@ -75,7 +75,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         for i in 0..<distinctValues.count{
                 if (dateCompare + "-" + dayString) == distinctValues[i]{
                     print("encontrado en \(totalSquares[indexPath.row])")
-                    cell.backgroundColor = .green
+                    cell.backgroundColor = UIColor(red: 0.573, green: 0.729, blue: 0.573, alpha: 1)
                     cell.layer.cornerRadius = 12.0
                     cell.layer.borderWidth = 0.5
                     cell.calendarImage.isHidden = false

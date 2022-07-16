@@ -26,6 +26,7 @@
 		414D294F285BA331003E19BD /* chronometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D294E285BA331003E19BD /* chronometer.swift */; };
 		4154DBCE285C97B700CF8CF8 /* SelectExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154DBCD285C97B700CF8CF8 /* SelectExerciseViewController.swift */; };
 		4154DBD0285D08DB00CF8CF8 /* recordCellPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154DBCF285D08DB00CF8CF8 /* recordCellPrototype.swift */; };
+		41560A772882C9EB005798C7 /* checkColorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41560A762882C9EB005798C7 /* checkColorText.swift */; };
 		41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599794285A5785003FCBD4 /* MainScreenViewController.swift */; };
 		41599797285A5AF0003FCBD4 /* SelectWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */; };
 		41599799285A5B21003FCBD4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599798285A5B21003FCBD4 /* RecordViewController.swift */; };
@@ -54,6 +55,7 @@
 		414D294E285BA331003E19BD /* chronometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chronometer.swift; sourceTree = "<group>"; };
 		4154DBCD285C97B700CF8CF8 /* SelectExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExerciseViewController.swift; sourceTree = "<group>"; };
 		4154DBCF285D08DB00CF8CF8 /* recordCellPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordCellPrototype.swift; sourceTree = "<group>"; };
+		41560A762882C9EB005798C7 /* checkColorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkColorText.swift; sourceTree = "<group>"; };
 		41599794285A5785003FCBD4 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkoutViewController.swift; sourceTree = "<group>"; };
 		41599798285A5B21003FCBD4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				413678C42860A81B002649A0 /* reverseDate.swift */,
 				41DA3BF12863801100542A5A /* getCurrentDate.swift */,
 				4128ED3D286DC9A600D5CCBE /* CalendarHelper.swift */,
+				41560A762882C9EB005798C7 /* checkColorText.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				4128ED3C286DC97C00D5CCBE /* calendarCell.swift in Sources */,
 				4128ED3A286DC3D400D5CCBE /* CalendarViewController.swift in Sources */,
 				41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */,
+				41560A772882C9EB005798C7 /* checkColorText.swift in Sources */,
 				413678C52860A81B002649A0 /* reverseDate.swift in Sources */,
 				4141ECEE2858AA2F008DCEF9 /* isStringAnInt.swift in Sources */,
 				4112C1222850B19500907194 /* AppDelegate.swift in Sources */,

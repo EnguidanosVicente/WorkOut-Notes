@@ -179,6 +179,9 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
         cell.currentRepsTextField.text = String(currentExercise[indexPath.row].reps)
         cell.currentWeightTextField.text = String(currentExercise[indexPath.row].weight)
         
+        cell.currentRepsTextField.textColor = checkColorText(prev: prevExercise[indexPath.row].reps, curr: currentExercise[indexPath.row].reps)
+        cell.currentWeightTextField.textColor = checkColorText(prev: prevExercise[indexPath.row].weight, curr: currentExercise[indexPath.row].weight)
+        
         if let prevMessage = prevExercise[indexPath.row].comment{
             if prevMessage > ""{
                 cell.previousCommentButton.isEnabled = true
@@ -369,16 +372,16 @@ extension RecordViewController: UITextFieldDelegate{
         if ((recordTableView.cellForRow(at: IndexPath(row: row, section: 0)) as! recordCellPrototype).currentRepsTextField.self == textField.self){
             if isStringAnInt(string: textField.text ?? " "){
                 currentExercise[row].reps = Int16(textField.text!)!
+                textField.textColor = checkColorText(prev: prevExercise[row].reps, curr: currentExercise[row].reps)
                 saveData()
             }
         }else{
             if isStringAnFloat(string: textField.text ?? " "){
                 currentExercise[row].weight = Float(textField.text!)!
+                textField.textColor = checkColorText(prev: prevExercise[row].weight, curr: currentExercise[row].weight)
                 saveData()
             }
         }
+        
     }
-    
-    
 }
-
