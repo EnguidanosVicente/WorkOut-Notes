@@ -384,4 +384,24 @@ extension RecordViewController: UITextFieldDelegate{
         }
         
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let row = textField.tag
+        
+        //check which textfield is selected
+        if ((recordTableView.cellForRow(at: IndexPath(row: row, section: 0)) as! recordCellPrototype).currentRepsTextField.self == textField.self){
+            if let textInt: Int = Int(textField.text!){
+                if textInt == 0{
+                    textField.text = ""
+                }
+            }
+        }else{
+            if let textInt: Float = Float(textField.text!){
+                if textInt == 0{
+                    textField.text = ""
+                }
+            }
+        }
+        
+    }
 }
