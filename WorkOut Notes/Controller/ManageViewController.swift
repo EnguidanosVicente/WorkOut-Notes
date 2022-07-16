@@ -32,11 +32,16 @@ class ManageViewController: UIViewController, UITableViewDelegate {
         
         print (path)
         
+        workoutTableView.backgroundColor = UIColor.clear
+        exerciseTableView.backgroundColor = UIColor.clear
+        
         workoutTableView.dataSource = self
         workoutTableView.delegate = self
         
         exerciseTableView.dataSource = self
         exerciseTableView.delegate = self
+        
+        exerciseButton.isEnabled = false
         
         loadWorkout()
         
@@ -60,6 +65,7 @@ class ManageViewController: UIViewController, UITableViewDelegate {
             let newWorkout = WorkOut(context: self.context)
             
             newWorkout.workOutName = newText.text!
+            newWorkout.order = Int16(self.workout.count + 1)
             
             self.workout.append(newWorkout)
             
@@ -121,6 +127,12 @@ class ManageViewController: UIViewController, UITableViewDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
+        
+        workoutTableView.isEditing.toggle()
+        exerciseTableView.isEditing.toggle()
+        sender.title = sender.title == "Edit" ? "Done" : "Edit"
+    }
 }
 
 
@@ -131,73 +143,54 @@ extension ManageViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //    var count: Int = 0
-        
         if tableView == self.workoutTableView {
             
             return workout.count
-            
-            //count = workout.count + 1
-            //lastRow = count - 1
         }
         
         if tableView == self.exerciseTableView {
             
             return exercise.count
-            
-            //            if numRow == nil{
-            //                count =  workout.count
-            //            }else{
-            //                count = titleWorkout[numRow!].exerciseList?.count ?? 0
-            //            }
         }
         
-        //      return count
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         var cell: UITableViewCell = UITableViewCell.init()
-        
-        
+            
         if tableView == self.workoutTableView {
             cell = workoutTableView.dequeueReusableCell(withIdentifier: "WorkoutCell", for: indexPath)
-            //  let addCell = workoutTableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath)
-            
-            //      if indexPath.row == lastRow{
-            //           addCell.textLabel?.text = "add"
-            //         return addCell
-            //      }else{
             cell.textLabel?.text = workout[indexPath.row].workOutName
-            //     }
         }
         if tableView == self.exerciseTableView {
-            
             cell = exerciseTableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath)
             cell.textLabel?.text = exercise[indexPath.row].exerciseName
-            //
-            //            if numRow == nil{
-            //                cell.textLabel?.text = exercise[indexPath.row].exerciseName
-            //            }else{
-            //
-            //                if self.exercise.contains(where: { $0.exerciseName == titleWorkout[numRow!].exerciseList?[indexPath.row]}){
-            //
-            //                    cell.textLabel?.text = titleWorkout[numRow!].exerciseList?[indexPath.row]
-            //
-            //                    }
-            //                }
         }
+        
+        cell.textLabel?.textColor = UIColor(named: "Color7")
+        cell.backgroundView = UIView()
+        cell.backgroundView?.backgroundColor = .clear
+        cell.backgroundView?.layer.borderWidth = 0
+        cell.selectedBackgroundView = UIView()
+        cell.selectedBackgroundView?.layer.borderColor = CGColor(red: 0.875, green: 0.965, blue: 1.000, alpha: 1)
+        cell.selectedBackgroundView?.layer.borderWidth = 2
+        cell.selectedBackgroundView?.layer.cornerRadius = 5
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        cell.textLabel?.numberOfLines = 1
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //   if tableView == self.workoutTableView && indexPath.row != lastRow
-        if tableView == self.workoutTableView{
-            //guarda la posicion de la celda seleccionada
-            numRow = indexPath.row
         
+        exerciseButton.isEnabled = true
+        
+        if tableView == self.workoutTableView{
+            //save position
+            numRow = indexPath.row
+            
             loadExercise()
             
         }
@@ -217,13 +210,35 @@ extension ManageViewController: UITableViewDataSource{
         }
     }
     
-    // Override to support conditional editing of the table view.
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        true
     }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
     
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        if tableView == self.workoutTableView{
+
+            workout.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+            for i in 0..<workout.count{
+                workout[i].order = Int16(i)
+            }
+
+            saveData()
+         
+        }else{
+            exercise.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+            for i in 0..<exercise.count{
+                exercise[i].order = Int16(i)
+            }
+
+            saveData()
+            
+        }
+    }
     
     // Override to support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -258,9 +273,11 @@ extension ManageViewController: UITableViewDataSource{
     func loadWorkout(){
         
         let request: NSFetchRequest<WorkOut> = WorkOut.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
         
         do{
             workout = try context.fetch(request)
+            
         }catch{
             print("Error fetch\(error)")
         }
@@ -275,7 +292,7 @@ extension ManageViewController: UITableViewDataSource{
         let predicate = NSCompoundPredicate(type: .and, subpredicates: [relationshipPredicate,set0Predicate])
         
         let request2: NSFetchRequest<Exercises> = Exercises.fetchRequest()
-        
+        request2.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
         request2.predicate = predicate
         
         do{

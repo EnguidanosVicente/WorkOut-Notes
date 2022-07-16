@@ -11,11 +11,12 @@ class MainScreenViewController: UIViewController {
 
     @IBOutlet weak var buildPlanButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
-        
+    @IBOutlet weak var buildPlan: UIButton!
+    @IBOutlet weak var calendar: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func buildPlanPressed(_ sender: UIButton) {

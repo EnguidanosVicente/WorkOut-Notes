@@ -16,32 +16,41 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
     var exerciseName: String = ""
     var exercise = [Exercises]()
     var emptyArray = false
+    var savePressed = false
     
     //se crea "el view de la base de datos"
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var setsTableView: UITableView!
-    @IBOutlet weak var exerciseTextField: UITextField!
     @IBOutlet weak var setsTextField: UITextField!
-    
+    @IBOutlet weak var ExerciseLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         emptyArray = false
-        
+        setsTableView.backgroundColor = UIColor.clear
         setsTableView.dataSource = self
         setsTableView.delegate = self
         // numberOfSets = Int(exerciseHeader.sets)
         
-        exerciseTextField.text = exerciseName
+        ExerciseLabel.text = exerciseName
         
         loadExercise()
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if savePressed == false{
+            context.rollback()
+        }
+        
+    }
     
-    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func SavePressed(_ sender: UIButton) {
+        savePressed = true
         
         for i in 0..<numberOfSets{
             exercise[i].exerciseName = exerciseName
@@ -172,11 +181,9 @@ extension AddModifyViewController: UITableViewDataSource{
 // MARK: extension 2
 
 extension AddModifyViewController: UITextFieldDelegate{
-    
-    //delegate method texfield, trigger when finish typing
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+
         let row = textField.tag
         
         //check which textfield is selected
@@ -185,13 +192,9 @@ extension AddModifyViewController: UITextFieldDelegate{
                 exercise[row].reps = Int16(textField.text!)!
             }
         }else{
-            if isStringAnInt(string: textField.text ?? " "){
+            if isStringAnFloat(string: textField.text ?? " "){
                 exercise[row].weight = Float(textField.text!)!
             }
         }
-        print (row)
-        print (exercise)
     }
-    
-    
 }

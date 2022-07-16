@@ -10,3 +10,7 @@ import Foundation
 func isStringAnInt(string: String) -> Bool {
     return Int(string) != nil
 }
+
+func isStringAnFloat(string: String) -> Bool {
+    return Float(string) != nil
+}

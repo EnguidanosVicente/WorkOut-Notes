@@ -21,6 +21,8 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var recordTableView: UITableView!
+    @IBOutlet weak var previousDate: UILabel!
+    @IBOutlet weak var currentDate: UILabel!
     
     var exerciseName: String = ""
     let chrono = chronometer()
@@ -29,6 +31,9 @@ class RecordViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var prevExercise = [Exercises]()
     var currentExercise = [Exercises]()
+    var startTime: Double = 0
+    var stopTime: Double = 0
+    var lastCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +42,7 @@ class RecordViewController: UIViewController {
         checkExercises()
         if prevExercise.count != 0{
             loadExercises()
+            setDates()
             recordTableView.dataSource = self
             recordTableView.delegate = self
         }else{
@@ -65,31 +71,44 @@ class RecordViewController: UIViewController {
     @IBAction func clearButtonPressed(_ sender: Any)
     {
         timer.invalidate()
+        stopTime = 0
+        lastCount = 0
         chrono.count = 0
-        displayLabel.text = chrono.makeTimeString(minutes: 0, seconds: 0)
+        displayLabel.text = chrono.makeTimeString(hours: 0, minutes: 0, seconds: 0)
         playButton.isEnabled = true
     }
     
     @IBAction func pauseButtonPressed(_ sender: Any)
     {
+        lastCount = chrono.count
         timer.invalidate()
         playButton.isEnabled = true
     }
     @IBAction func platButtonPressed(_ sender: Any)
     {
+        startTime = NSDate.timeIntervalSinceReferenceDate
+        
+        print (lastCount)
         if stopCount{
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] t in
-                chrono.count += 1
-                let time = self.chrono.secondsToHoursMinutesSeconds(seconds: chrono.count)
-                displayLabel.text = self.chrono.makeTimeString(minutes: time.0, seconds: time.1)
+            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [self] t in
+                stopTime = (NSDate.timeIntervalSinceReferenceDate - startTime)  * 100
+                chrono.count = Int(stopTime) + lastCount
+
+                let time = self.chrono.secondsToHoursMinutesSeconds(time: chrono.count)
+                displayLabel.text = self.chrono.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
             })
         }else{
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] t in
-                chrono.count -= 1
-                let time = self.chrono.secondsToHoursMinutesSeconds(seconds: chrono.count)
-                displayLabel.text = self.chrono.makeTimeString(minutes: time.0, seconds: time.1)
+            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [self] t in
+                stopTime = (NSDate.timeIntervalSinceReferenceDate - startTime) * 100
+                chrono.count = lastCount - Int(stopTime)
+                
+                let time = self.chrono.secondsToHoursMinutesSeconds(time: chrono.count)
+                displayLabel.text = self.chrono.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
                 if chrono.count < 1{
                     timer.invalidate()
+                    stopTime = 0
+                    lastCount = 0
+                    chrono.count = 0
                     playButton.isEnabled = true
                 }
             })
@@ -100,8 +119,10 @@ class RecordViewController: UIViewController {
     @IBAction func cangeCountPressed(_ sender: UISegmentedControl) {
         
         timer.invalidate()
+        stopTime = 0
+        lastCount = 0
         chrono.count = 0
-        displayLabel.text = chrono.makeTimeString(minutes: 0, seconds: 0)
+        displayLabel.text = chrono.makeTimeString(hours: 0, minutes: 0, seconds: 0)
         playButton.isEnabled = true
         
         if typeTimerControl.titleForSegment(at: typeTimerControl.selectedSegmentIndex)! == "Stop Count"{
@@ -112,27 +133,27 @@ class RecordViewController: UIViewController {
         
     }
     @IBAction func plus10sPressed(_ sender: UIButton) {
-        chrono.count = chrono.count + 10
-        let time = chrono.secondsToHoursMinutesSeconds(seconds: chrono.count)
-        displayLabel.text = chrono.makeTimeString(minutes: time.0, seconds: time.1)
+        lastCount = lastCount + 1000
+        let time = chrono.secondsToHoursMinutesSeconds(time: lastCount)
+        displayLabel.text = chrono.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
     }
     @IBAction func minus10sPressed(_ sender: UIButton) {
-        if chrono.count >= 10{
-            chrono.count = chrono.count - 10
-            let time = chrono.secondsToHoursMinutesSeconds(seconds: chrono.count)
-            displayLabel.text = chrono.makeTimeString(minutes: time.0, seconds: time.1)
+        if lastCount >= 1000{
+            lastCount = lastCount - 1000
+            let time = chrono.secondsToHoursMinutesSeconds(time: lastCount)
+            displayLabel.text = chrono.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
         }
     }
     @IBAction func plus1mPressed(_ sender: UIButton) {
-        chrono.count = chrono.count + 60
-        let time = chrono.secondsToHoursMinutesSeconds(seconds: chrono.count)
-        displayLabel.text = chrono.makeTimeString(minutes: time.0, seconds: time.1)
+        lastCount = lastCount + 6000
+        let time = chrono.secondsToHoursMinutesSeconds(time: lastCount)
+        displayLabel.text = chrono.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
     }
     @IBAction func minus1mPressed(_ sender: UIButton) {
-        if chrono.count >= 60{
-            chrono.count = chrono.count - 60
-            let time = chrono.secondsToHoursMinutesSeconds(seconds: chrono.count)
-            displayLabel.text = chrono.makeTimeString(minutes: time.0, seconds: time.1)
+        if lastCount >= 6000{
+            lastCount = lastCount - 6000
+            let time = chrono.secondsToHoursMinutesSeconds(time: lastCount)
+            displayLabel.text = chrono.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
         }
     }
 }
@@ -144,66 +165,61 @@ class RecordViewController: UIViewController {
 extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //add 2 header rows
-    
-        return prevExercise.count + 2
+        
+        return prevExercise.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        if indexPath.row == 0{
-            let cellHeadDate = recordTableView.dequeueReusableCell(withIdentifier: "headerDateCell", for: indexPath) as! dateCellPrototype
-            cellHeadDate.dateCell.text = reverseDate(date: prevExercise[0].date ?? "")
-            cellHeadDate.currentDate.text = reverseDate(date: getCurrentDate())
-            return cellHeadDate
-        }else if indexPath.row == 1{
-            let cellHeader = recordTableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath)
-            return cellHeader
-        }else{
-            let cell = recordTableView.dequeueReusableCell(withIdentifier: "cellRecord", for: indexPath) as! recordCellPrototype
-            
-            cell.numberOfsetTextField.text = String(prevExercise[indexPath.row - 2].numberOfSet)
-            cell.previousRepsTextField.text = String(prevExercise[indexPath.row - 2].reps)
-            cell.previousWeightTextField.text = String(prevExercise[indexPath.row - 2].weight)
-            cell.currentRepsTextField.text = String(currentExercise[indexPath.row - 2].reps)
-            cell.currentWeightTextField.text = String(currentExercise[indexPath.row - 2].weight)
-            
-            if let prevMessage = prevExercise[indexPath.row - 2].comment{
-                if prevMessage > ""{
-                    cell.previousCommentButton.isEnabled = true
-                    cell.previousCommentButton.tag = indexPath.row - 2
-                    cell.previousCommentButton.addTarget(self, action: #selector(prevButtonWasTapped(sender:)), for: .touchUpInside)
-                }else{
-                    cell.previousCommentButton.isEnabled = false
-                }
+        
+        let cell = recordTableView.dequeueReusableCell(withIdentifier: "cellRecord", for: indexPath) as! recordCellPrototype
+        
+        cell.numberOfsetTextField.text = String(prevExercise[indexPath.row].numberOfSet)
+        cell.previousRepsTextField.text = String(prevExercise[indexPath.row].reps)
+        cell.previousWeightTextField.text = String(prevExercise[indexPath.row].weight)
+        cell.currentRepsTextField.text = String(currentExercise[indexPath.row].reps)
+        cell.currentWeightTextField.text = String(currentExercise[indexPath.row].weight)
+        
+        if let prevMessage = prevExercise[indexPath.row].comment{
+            if prevMessage > ""{
+                cell.previousCommentButton.isEnabled = true
+                cell.previousCommentButton.tag = indexPath.row
+                cell.previousCommentButton.addTarget(self, action: #selector(prevButtonWasTapped(sender:)), for: .touchUpInside)
             }else{
                 cell.previousCommentButton.isEnabled = false
             }
-            
-            cell.currentCommentButton.tag = indexPath.row - 2
-            cell.currentCommentButton.addTarget(self, action: #selector(currentButtonWasTapped(sender:)), for: .touchUpInside)
-            
-            cell.currentRepsTextField.tag = indexPath.row
-            cell.currentRepsTextField.delegate = self
-            
-            cell.currentWeightTextField.tag = indexPath.row
-            cell.currentWeightTextField.delegate = self
-            
-            return cell
+        }else{
+            cell.previousCommentButton.isEnabled = false
         }
+        
+        cell.currentCommentButton.tag = indexPath.row
+        cell.currentCommentButton.addTarget(self, action: #selector(currentButtonWasTapped(sender:)), for: .touchUpInside)
+        
+        cell.currentRepsTextField.tag = indexPath.row
+        cell.currentRepsTextField.delegate = self
+        
+        cell.currentWeightTextField.tag = indexPath.row
+        cell.currentWeightTextField.delegate = self
+        
+        return cell
+        
     }
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+
+            return nil
+        }
     
     @objc func prevButtonWasTapped(sender: UIButton){
-
+        
         let alert = UIAlertController(title: prevExercise[sender.tag].comment, message: "", preferredStyle: .alert)
         
         let actionOk = UIAlertAction(title: "OK", style: .default)
-
+        
         alert.addAction(actionOk)
         present(alert, animated: true, completion: nil)
     }
     
     @objc func currentButtonWasTapped(sender: UIButton){
-
+        
         var newText = UITextField()
         
         let alert = UIAlertController(title: "Add comment", message: "", preferredStyle: .alert)
@@ -246,7 +262,7 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
         
         let firstDate = getCurrentDate()
         var secondDate = "0000-00-00"
-
+        
         for i in 0..<prevExercise.count{
             if prevExercise[i].date != firstDate
             {
@@ -319,9 +335,9 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     func promptBack(){
-       if prevExercise.count == 0{
+        if prevExercise.count == 0{
             let alert = UIAlertController(title: "Hey!", message: "Please, configure workout first.", preferredStyle: .alert)
-
+            
             
             let actionOk = UIAlertAction(title: "Ok", style: .default) { action in
                 print("success")
@@ -330,10 +346,13 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
             }
             alert.addAction(actionOk)
             present(alert, animated: true, completion: nil)
-           
-       }
+            
+        }
     }
-
+    func setDates(){
+        previousDate.text = reverseDate(date: prevExercise[0].date ?? "")
+        currentDate.text = reverseDate(date: getCurrentDate())
+    }
 }
 
 // MARK: extension 2
@@ -341,20 +360,20 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
 extension RecordViewController: UITextFieldDelegate{
     
     //delegate method texfield, trigger when finish typing
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         let row = textField.tag
-   
+        
         //check which textfield is selected
         if ((recordTableView.cellForRow(at: IndexPath(row: row, section: 0)) as! recordCellPrototype).currentRepsTextField.self == textField.self){
             if isStringAnInt(string: textField.text ?? " "){
-                currentExercise[row - 2].reps = Int16(textField.text!)!
+                currentExercise[row].reps = Int16(textField.text!)!
                 saveData()
             }
         }else{
-            if isStringAnInt(string: textField.text ?? " "){
-                currentExercise[row - 2].weight = Float(textField.text!)!
+            if isStringAnFloat(string: textField.text ?? " "){
+                currentExercise[row].weight = Float(textField.text!)!
                 saveData()
             }
         }
