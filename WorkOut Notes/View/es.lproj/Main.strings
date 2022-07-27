@@ -1,0 +1,171 @@
+
+/* Class = "UISegmentedControl"; 0RG-Vj-DBs.segmentTitles[0] = "Stop Count"; ObjectID = "0RG-Vj-DBs"; */
+"0RG-Vj-DBs.segmentTitles[0]" = "Cronómetro";
+
+/* Class = "UISegmentedControl"; 0RG-Vj-DBs.segmentTitles[1] = "Count Down"; ObjectID = "0RG-Vj-DBs"; */
+"0RG-Vj-DBs.segmentTitles[1]" = "Cuenta atrás";
+
+/* Class = "UIButton"; configuration.title = "Add Workout"; ObjectID = "32Z-77-ZRv"; */
+"32Z-77-ZRv.configuration.title" = "Añadir rutina";
+
+/* Class = "UIButton"; normalTitle = "Add Workout"; ObjectID = "32Z-77-ZRv"; */
+"32Z-77-ZRv.normalTitle" = "Añadir rutina";
+
+/* Class = "UILabel"; text = "0000-00-00"; ObjectID = "47B-2L-sfA"; */
+"47B-2L-sfA.text" = "0000-00-00";
+
+/* Class = "UILabel"; text = "May 31"; ObjectID = "47G-PM-L0a"; */
+"47G-PM-L0a.text" = "May 31";
+
+/* Class = "UILabel"; text = "WORKOUT"; ObjectID = "4H1-TN-xxw"; */
+"4H1-TN-xxw.text" = "RUTINAS";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5Wv-cd-z3y"; */
+"5Wv-cd-z3y.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6Ox-rr-pGX"; */
+"6Ox-rr-pGX.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "6c2-fd-ZB4"; */
+"6c2-fd-ZB4.title" = "Edit";
+
+/* Class = "UILabel"; text = "Weight:"; ObjectID = "6jf-N2-wpk"; */
+"6jf-N2-wpk.text" = "Peso:";
+
+/* Class = "UILabel"; text = "Reps"; ObjectID = "7dg-1V-3Yk"; */
+"7dg-1V-3Yk.text" = "Reps";
+
+/* Class = "UIButton"; configuration.title = "SAVE"; ObjectID = "83J-d5-wR5"; */
+"83J-d5-wR5.configuration.title" = "GUARDAR";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "83J-d5-wR5"; */
+"83J-d5-wR5.normalTitle" = "GUARDAR";
+
+/* Class = "UILabel"; text = "Weight"; ObjectID = "8Vl-dT-NU2"; */
+"8Vl-dT-NU2.text" = "Peso";
+
+/* Class = "UILabel"; text = "WORKOUT NOTES"; ObjectID = "8x7-ym-P0H"; */
+"8x7-ym-P0H.text" = "WORKOUT NOTES";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9VN-cn-SHc"; */
+"9VN-cn-SHc.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Add Exercise"; ObjectID = "B4I-BV-V7q"; */
+"B4I-BV-V7q.configuration.title" = "Añadir ejercicio";
+
+/* Class = "UIButton"; normalTitle = "Add Exercise"; ObjectID = "B4I-BV-V7q"; */
+"B4I-BV-V7q.normalTitle" = "Añadir ejercicio";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "BON-54-UNe"; */
+"BON-54-UNe.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Tue"; ObjectID = "E24-ec-QJP"; */
+"E24-ec-QJP.text" = "Mar";
+
+/* Class = "UIButton"; configuration.title = "Calendar"; ObjectID = "F2j-VR-HUA"; */
+"F2j-VR-HUA.configuration.title" = "Calendario";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "F2j-VR-HUA"; */
+"F2j-VR-HUA.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Record workout"; ObjectID = "GFN-zF-Cdr"; */
+"GFN-zF-Cdr.configuration.title" = "Grabar entreno";
+
+/* Class = "UILabel"; text = "Current"; ObjectID = "GYM-4Z-uJV"; */
+"GYM-4Z-uJV.text" = "Actual";
+
+/* Class = "UILabel"; text = "Set:"; ObjectID = "H3L-uA-0g6"; */
+"H3L-uA-0g6.text" = "Set:";
+
+/* Class = "UILabel"; text = "Sun"; ObjectID = "Kvb-he-bcY"; */
+"Kvb-he-bcY.text" = "Dom";
+
+/* Class = "UILabel"; text = "Sat"; ObjectID = "LKN-Fl-HxS"; */
+"LKN-Fl-HxS.text" = "Sab";
+
+/* Class = "UILabel"; text = "Thu"; ObjectID = "NAK-dD-Y1C"; */
+"NAK-dD-Y1C.text" = "Jue";
+
+/* Class = "UINavigationItem"; title = "Workouts"; ObjectID = "OLT-Cs-uoZ"; */
+"OLT-Cs-uoZ.title" = "Rutinas";
+
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "P9b-gs-RJ0"; */
+"P9b-gs-RJ0.text" = "00:00:00";
+
+/* Class = "UILabel"; text = "Reps:"; ObjectID = "Qli-90-IQ6"; */
+"Qli-90-IQ6.text" = "Reps:";
+
+/* Class = "UILabel"; text = "Select Workout"; ObjectID = "RCg-Cp-XUO"; */
+"RCg-Cp-XUO.text" = "Selecciona Rutina";
+
+/* Class = "UILabel"; text = "Previous"; ObjectID = "TND-7j-bgY"; */
+"TND-7j-bgY.text" = "Anterior";
+
+/* Class = "UINavigationItem"; title = "Manage routines"; ObjectID = "V0t-3w-osg"; */
+"V0t-3w-osg.title" = "Gestionar Rutinas";
+
+/* Class = "UILabel"; text = "00-00-0000"; ObjectID = "VYW-XP-B9k"; */
+"VYW-XP-B9k.text" = "00-00-0000";
+
+/* Class = "UILabel"; text = "00-00-0000"; ObjectID = "WrK-2u-rNx"; */
+"WrK-2u-rNx.text" = "00-00-0000";
+
+/* Class = "UILabel"; text = "10s"; ObjectID = "Y4O-0a-yHY"; */
+"Y4O-0a-yHY.text" = "10s";
+
+/* Class = "UILabel"; text = "Set"; ObjectID = "YKT-0z-UKV"; */
+"YKT-0z-UKV.text" = "Set";
+
+/* Class = "UILabel"; text = "Fri"; ObjectID = "Zjj-pg-7QN"; */
+"Zjj-pg-7QN.text" = "Vie";
+
+/* Class = "UILabel"; text = "Record date: "; ObjectID = "a7e-tg-jde"; */
+"a7e-tg-jde.text" = "Fecha: ";
+
+/* Class = "UILabel"; text = "Exercise"; ObjectID = "aHv-7C-7MQ"; */
+"aHv-7C-7MQ.text" = "Ejercicio";
+
+/* Class = "UIButton"; configuration.title = "Manage routines"; ObjectID = "e0V-T5-3Au"; */
+"e0V-T5-3Au.configuration.title" = "Gestionar rutinas";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "e0V-T5-3Au"; */
+"e0V-T5-3Au.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "e1I-Iu-zTc"; */
+"e1I-Iu-zTc.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Reps"; ObjectID = "e8T-B4-MzP"; */
+"e8T-B4-MzP.text" = "Reps";
+
+/* Class = "UILabel"; text = "Weight"; ObjectID = "e9a-Zr-vFW"; */
+"e9a-Zr-vFW.text" = "Peso";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gDD-oH-oiq"; */
+"gDD-oH-oiq.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Wed"; ObjectID = "i35-xc-d3c"; */
+"i35-xc-d3c.text" = "Mie";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "jOx-ea-jvy"; */
+"jOx-ea-jvy.text" = "1";
+
+/* Class = "UILabel"; text = "Mon"; ObjectID = "kZS-FR-dbe"; */
+"kZS-FR-dbe.text" = "Lun";
+
+/* Class = "UILabel"; text = "EXERCISES"; ObjectID = "lhW-xq-ljA"; */
+"lhW-xq-ljA.text" = "EJERCICIOS";
+
+/* Class = "UILabel"; text = "1m"; ObjectID = "mOv-JV-i4E"; */
+"mOv-JV-i4E.text" = "1m";
+
+/* Class = "UILabel"; text = "Select Exercise"; ObjectID = "nVk-5f-8lZ"; */
+"nVk-5f-8lZ.text" = "Selecciona Ejercicio";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rkN-GM-eXE"; */
+"rkN-GM-eXE.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Number of sets"; ObjectID = "vsh-xL-9bB"; */
+"vsh-xL-9bB.placeholder" = "Numero de set";
+
+/* Class = "UILabel"; text = "Sets:"; ObjectID = "z7t-oM-fo0"; */
+"z7t-oM-fo0.text" = "Sets:";

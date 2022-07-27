@@ -11,7 +11,6 @@
 		4112C1242850B19500907194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4112C1232850B19500907194 /* SceneDelegate.swift */; };
 		4112C12E2850B19A00907194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4112C12D2850B19A00907194 /* Assets.xcassets */; };
 		4112C1312850B19A00907194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4112C12F2850B19A00907194 /* LaunchScreen.storyboard */; };
-		4112C1392850B36900907194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4112C1382850B36900907194 /* Main.storyboard */; };
 		4112C13C2850B39800907194 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4112C13A2850B39800907194 /* dataModel.xcdatamodeld */; };
 		4112C1442850B6E700907194 /* AddModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4112C1432850B6E700907194 /* AddModifyViewController.swift */; };
 		4112C1462850BAF000907194 /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4112C1452850BAF000907194 /* ManageViewController.swift */; };
@@ -27,6 +26,7 @@
 		4154DBCE285C97B700CF8CF8 /* SelectExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154DBCD285C97B700CF8CF8 /* SelectExerciseViewController.swift */; };
 		4154DBD0285D08DB00CF8CF8 /* recordCellPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154DBCF285D08DB00CF8CF8 /* recordCellPrototype.swift */; };
 		41560A772882C9EB005798C7 /* checkColorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41560A762882C9EB005798C7 /* checkColorText.swift */; };
+		41560A7F2882E870005798C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41560A812882E870005798C7 /* Main.storyboard */; };
 		41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599794285A5785003FCBD4 /* MainScreenViewController.swift */; };
 		41599797285A5AF0003FCBD4 /* SelectWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */; };
 		41599799285A5B21003FCBD4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599798285A5B21003FCBD4 /* RecordViewController.swift */; };
@@ -40,7 +40,6 @@
 		4112C12D2850B19A00907194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4112C1302850B19A00907194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4112C1322850B19A00907194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4112C1382850B36900907194 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4112C13B2850B39800907194 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		4112C1432850B6E700907194 /* AddModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModifyViewController.swift; sourceTree = "<group>"; };
 		4112C1452850BAF000907194 /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +55,9 @@
 		4154DBCD285C97B700CF8CF8 /* SelectExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExerciseViewController.swift; sourceTree = "<group>"; };
 		4154DBCF285D08DB00CF8CF8 /* recordCellPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordCellPrototype.swift; sourceTree = "<group>"; };
 		41560A762882C9EB005798C7 /* checkColorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkColorText.swift; sourceTree = "<group>"; };
+		41560A802882E870005798C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41560A822882E885005798C7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		41560A832882E885005798C7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		41599794285A5785003FCBD4 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkoutViewController.swift; sourceTree = "<group>"; };
 		41599798285A5B21003FCBD4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +125,7 @@
 		4112C1402850B60200907194 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4112C1382850B36900907194 /* Main.storyboard */,
+				41560A812882E870005798C7 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +197,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 4112C1152850B19500907194;
 			productRefGroup = 4112C11F2850B19500907194 /* Products */;
@@ -213,7 +216,7 @@
 			files = (
 				4112C1312850B19A00907194 /* LaunchScreen.storyboard in Resources */,
 				4112C12E2850B19A00907194 /* Assets.xcassets in Resources */,
-				4112C1392850B36900907194 /* Main.storyboard in Resources */,
+				41560A7F2882E870005798C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +258,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				4112C1302850B19A00907194 /* Base */,
+				41560A822882E885005798C7 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		41560A812882E870005798C7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41560A802882E870005798C7 /* Base */,
+				41560A832882E885005798C7 /* es */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -266,6 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -326,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
