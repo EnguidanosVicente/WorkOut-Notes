@@ -27,7 +27,7 @@
 "6Ox-rr-pGX.normalTitle" = "Button";
 
 /* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "6c2-fd-ZB4"; */
-"6c2-fd-ZB4.title" = "Edit";
+"6c2-fd-ZB4.title" = "Editar";
 
 /* Class = "UILabel"; text = "Weight:"; ObjectID = "6jf-N2-wpk"; */
 "6jf-N2-wpk.text" = "Peso:";

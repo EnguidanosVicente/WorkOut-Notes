@@ -51,13 +51,13 @@ class ManageViewController: UIViewController, UITableViewDelegate {
         
         var newText = UITextField()
         
-        let alert = UIAlertController(title: "Add woukout", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Add woukout", comment: "Add woukout"), message: "", preferredStyle: .alert)
         alert.addTextField { alertTextField in
-            alertTextField.placeholder = "example: Monday"
+            alertTextField.placeholder = NSLocalizedString("Example: Monday", comment: "Example: Monday")
             newText = alertTextField
         }
         
-        let actionAdd = UIAlertAction(title: "Add", style: .default) { action in
+        let actionAdd = UIAlertAction(title: NSLocalizedString("Add", comment: "Add"), style: .default) { action in
             print("success")
             //            self.titleWorkout.append(Workout(workoutName: newText.text!, exerciseList: nil))
             //    workout.workOutName = newText.text!
@@ -75,7 +75,7 @@ class ManageViewController: UIViewController, UITableViewDelegate {
             self.workoutTableView.reloadData()
             
         }
-        let actionCancel = UIAlertAction(title: "Cancel", style: .destructive) { action in
+        let actionCancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .destructive) { action in
             print("CANCEL")
         }
         
@@ -88,12 +88,12 @@ class ManageViewController: UIViewController, UITableViewDelegate {
         
         var newText = UITextField()
         
-        let alert = UIAlertController(title: "Add exercise", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Add exercise", comment: "Add exercise"), message: "", preferredStyle: .alert)
         alert.addTextField { alertTextField in
-            alertTextField.placeholder = "example: bench press"
+            alertTextField.placeholder = NSLocalizedString("Example: bench press", comment: "Example: bench press")
             newText = alertTextField
         }
-        let actionAdd = UIAlertAction(title: "Add", style: .default) { action in
+        let actionAdd = UIAlertAction(title: NSLocalizedString("Add", comment: "Add"), style: .default) { action in
             
             //Fill exercises with all to check if already exists
             self.loadExerciseBackgorund()
@@ -118,7 +118,7 @@ class ManageViewController: UIViewController, UITableViewDelegate {
             self.saveData()
             self.loadExercise()
         }
-        let actionCancel = UIAlertAction(title: "Cancel", style: .destructive) { action in
+        let actionCancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .destructive) { action in
             print("CANCEL")
         }
         
@@ -131,7 +131,20 @@ class ManageViewController: UIViewController, UITableViewDelegate {
         
         workoutTableView.isEditing.toggle()
         exerciseTableView.isEditing.toggle()
-        sender.title = sender.title == "Edit" ? "Done" : "Edit"
+        
+        if sender.title == "Edit"{
+            sender.title = "Done"
+        }else if sender.title == "Done"{
+            sender.title = "Edit"
+        }
+        if sender.title == "Editar"{
+            sender.title = "Listo"
+        }else if sender.title == "Listo"{
+            sender.title = "Editar"
+        }
+        
+        //sender.title = sender.title == "Edit" ? "Done" : "Edit"
+        
     }
 }
 
@@ -221,8 +234,8 @@ extension ManageViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
         if tableView == self.workoutTableView{
-
-            workout.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+            
+            workout.rearrange(from: sourceIndexPath.row, to: destinationIndexPath.row)
             for i in 0..<workout.count{
                 workout[i].order = Int16(i)
             }
@@ -230,7 +243,8 @@ extension ManageViewController: UITableViewDataSource{
             saveData()
          
         }else{
-            exercise.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+
+            exercise.rearrange(from: sourceIndexPath.row, to: destinationIndexPath.row)
             for i in 0..<exercise.count{
                 exercise[i].order = Int16(i)
             }
@@ -326,4 +340,10 @@ extension ManageViewController: UITableViewDataSource{
         
     }
     
+}
+
+extension Array {
+    mutating func rearrange(from: Int, to: Int) {
+        insert(remove(at: from), at: to)
+    }
 }

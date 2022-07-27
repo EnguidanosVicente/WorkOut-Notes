@@ -22,11 +22,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall2" translatesAutoresizingMaskIntoConstraints="NO" id="jrn-uf-lKe">
                                 <rect key="frame" x="0.0" y="-704" width="414" height="1600"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="bO1-bT-NTr">
-                                <rect key="frame" x="60" y="432" width="294" height="301"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="bO1-bT-NTr">
+                                <rect key="frame" x="60" y="456" width="294" height="253"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-zF-Cdr">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="71.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="47"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Record workout" cornerStyle="capsule">
                                             <backgroundConfiguration key="background" strokeWidth="2">
                                                 <color key="strokeColor" name="Color7"/>
@@ -40,7 +40,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-T5-3Au">
-                                        <rect key="frame" x="0.0" y="114.5" width="294" height="71.5"/>
+                                        <rect key="frame" x="0.0" y="103" width="294" height="47"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Manage routines" cornerStyle="capsule">
                                             <backgroundConfiguration key="background" strokeWidth="2">
@@ -55,7 +55,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2j-VR-HUA">
-                                        <rect key="frame" x="0.0" y="229" width="294" height="72"/>
+                                        <rect key="frame" x="0.0" y="206" width="294" height="47"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Calendar" cornerStyle="capsule">
                                             <backgroundConfiguration key="background" strokeWidth="2">
@@ -70,9 +70,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="bO1-bT-NTr" secondAttribute="height" multiplier="214:219" id="TWl-lP-ul5"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RA6-wG-iW4">
                                 <rect key="frame" x="20" y="204" width="374" height="40"/>
@@ -733,10 +730,10 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-qe-YYC">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-qe-YYC">
                                                                             <rect key="frame" x="99.5" y="0.0" width="62" height="40"/>
                                                                             <color key="textColor" name="Color1"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFu-MW-DUg">
@@ -928,10 +925,10 @@
                                 <color key="backgroundColor" name="Color6"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ckQ-Ku-a6d">
-                                <rect key="frame" x="0.0" y="831" width="414" height="31"/>
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Z-77-ZRv">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Add Workout">
@@ -950,7 +947,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4I-BV-V7q">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="31"/>
+                                        <rect key="frame" x="207" y="0.0" width="207" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="dhp-EB-sMw"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Add Exercise">
@@ -991,10 +991,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WUL-Fz-j71">
-                                <rect key="frame" x="0.0" y="112" width="414" height="719"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="690"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0aC-Rw-jWW">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="719"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="690"/>
                                         <color key="sectionIndexColor" name="Color7"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1012,7 +1012,7 @@
                                         </prototypes>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-KL-iin">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="719"/>
+                                        <rect key="frame" x="207" y="0.0" width="207" height="690"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="sectionIndexColor" name="Color7"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1138,10 +1138,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="10y-gl-so9">
-                                <rect key="frame" x="0.0" y="248" width="414" height="546"/>
+                                <rect key="frame" x="0.0" y="248" width="414" height="534"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Wdk-hM-XBW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="546"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="534"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="sectionIndexColor" name="Color7"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1227,10 +1227,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rkZ-KE-ETd">
-                                <rect key="frame" x="0.0" y="794" width="414" height="68"/>
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83J-d5-wR5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="YgH-NH-KFL"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="SAVE">

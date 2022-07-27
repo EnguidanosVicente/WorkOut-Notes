@@ -339,7 +339,7 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func promptBack(){
         if prevExercise.count == 0{
-            let alert = UIAlertController(title: "Hey!", message: "Please, configure workout first.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Hey!", message: NSLocalizedString("Please, configure workout first.", comment: "Please, configure workout first."), preferredStyle: .alert)
             
             
             let actionOk = UIAlertAction(title: "Ok", style: .default) { action in

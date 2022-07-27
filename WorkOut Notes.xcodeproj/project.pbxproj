@@ -30,6 +30,7 @@
 		41599795285A5785003FCBD4 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599794285A5785003FCBD4 /* MainScreenViewController.swift */; };
 		41599797285A5AF0003FCBD4 /* SelectWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */; };
 		41599799285A5B21003FCBD4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41599798285A5B21003FCBD4 /* RecordViewController.swift */; };
+		41684EB728915BA3004965D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41684EB928915BA3004965D8 /* Localizable.strings */; };
 		41DA3BF22863801100542A5A /* getCurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA3BF12863801100542A5A /* getCurrentDate.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		41599794285A5785003FCBD4 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		41599796285A5AF0003FCBD4 /* SelectWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkoutViewController.swift; sourceTree = "<group>"; };
 		41599798285A5B21003FCBD4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		41684EB828915BA3004965D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41684EBA28915BA5004965D8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		41DA3BF12863801100542A5A /* getCurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getCurrentDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +105,7 @@
 				4112C12D2850B19A00907194 /* Assets.xcassets */,
 				4112C12F2850B19A00907194 /* LaunchScreen.storyboard */,
 				4112C1322850B19A00907194 /* Info.plist */,
+				41684EB928915BA3004965D8 /* Localizable.strings */,
 			);
 			path = "WorkOut Notes";
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4112C1312850B19A00907194 /* LaunchScreen.storyboard in Resources */,
+				41684EB728915BA3004965D8 /* Localizable.strings in Resources */,
 				4112C12E2850B19A00907194 /* Assets.xcassets in Resources */,
 				41560A7F2882E870005798C7 /* Main.storyboard in Resources */,
 			);
@@ -270,6 +275,15 @@
 				41560A832882E885005798C7 /* es */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		41684EB928915BA3004965D8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41684EB828915BA3004965D8 /* en */,
+				41684EBA28915BA5004965D8 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

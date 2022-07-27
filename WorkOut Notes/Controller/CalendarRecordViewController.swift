@@ -42,7 +42,8 @@ class CalendarRecordViewController: UIViewController, UITableViewDelegate, UITab
         let set = String(getSections()[indexPath.section].datasection[indexPath.row].set)
         let reps = String(getSections()[indexPath.section].datasection[indexPath.row].reps)
         let weight = String(getSections()[indexPath.section].datasection[indexPath.row].weight)
-        cell.textLabel?.text = "Set: \(set)    Reps: \(reps)    Weight: \(weight)"
+        let tansWeight = NSLocalizedString("Weight:", comment: "Weight:")
+        cell.textLabel?.text = "Set: \(set)    Reps: \(reps)    \(tansWeight) \(weight)"
         
         return cell
     }
