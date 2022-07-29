@@ -1185,7 +1185,7 @@
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UsK-1V-Buh">
                                                                             <rect key="frame" x="57.5" y="0.0" width="58" height="34.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                                         </textField>
                                                                     </subviews>
                                                                 </stackView>

@@ -38,6 +38,7 @@ class RecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupToHideKeyboardOnTapOnView()
         self.title = exerciseName
         checkExercises()
         if prevExercise.count != 0{
@@ -225,19 +226,19 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource{
         
         var newText = UITextField()
         
-        let alert = UIAlertController(title: "Add comment", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Add comment", comment: "Add comment"), message: "", preferredStyle: .alert)
         alert.addTextField { alertTextField in
-            alertTextField.placeholder = "example: Add more weight"
+            alertTextField.placeholder = NSLocalizedString("example: Add more weight", comment: "example: Add more weight")
             alertTextField.text = self.currentExercise[sender.tag].comment ?? ""
             newText = alertTextField
         }
         
         
-        let actionSave = UIAlertAction(title: "Save", style: .default) { action in
+        let actionSave = UIAlertAction(title: NSLocalizedString("Save", comment: "Save"), style: .default) { action in
             self.currentExercise[sender.tag].comment = newText.text
             self.saveData()
         }
-        let actionCancel = UIAlertAction(title: "Cancel", style: .destructive)
+        let actionCancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .destructive)
         
         alert.addAction(actionSave)
         alert.addAction(actionCancel)
@@ -409,3 +410,4 @@ extension RecordViewController: UITextFieldDelegate{
         return true
     }
 }
+

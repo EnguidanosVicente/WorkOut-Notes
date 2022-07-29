@@ -7,3 +7,6 @@
 "Example: bench press" = "Ejemplo: Press de Banca";
 "Please, configure workout first." = "Por favor, configura el ejercicio primero.";
 "Weight:" = "Peso:";
+"Add comment" = "Añadir comentario";
+"example: Add more weight" = "Ejemplo: Añadir 5kg";
+"Save" = "Guardar";

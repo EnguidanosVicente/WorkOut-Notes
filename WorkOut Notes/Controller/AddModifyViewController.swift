@@ -29,6 +29,7 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupToHideKeyboardOnTapOnView()
         emptyArray = false
         setsTableView.backgroundColor = UIColor.clear
         setsTableView.dataSource = self
@@ -72,7 +73,6 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
         }
         
         saveData()
-        print (exercise)
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -85,6 +85,7 @@ class AddModifyViewController: UIViewController, UITableViewDelegate {
             self.setsTableView.reloadData()
         }
     }
+
 }
 
 // MARK: extension 1
@@ -201,4 +202,6 @@ extension AddModifyViewController: UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
+
 }
+
